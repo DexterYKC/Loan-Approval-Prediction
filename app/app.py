@@ -1,18 +1,23 @@
-import json, joblib, pandas as pd
 from pathlib import Path
+import json, joblib, pandas as pd
 import streamlit as st
 
-st.set_page_config(page_title="Loan Approval", page_icon="", layout="centered")
+# === chemins robustes (relatifs à ce fichier) ===
+BASE_DIR   = Path(__file__).resolve().parent
+MODEL_PATH = BASE_DIR / "model.pkl"
+SCHEMA_PATH= BASE_DIR / "features.json"
+DATA_PATH  = BASE_DIR.parent / "data" / "loan.csv"
 
-MODEL_PATH = Path("model.pkl")
-SCHEMA_PATH = Path("features.json")
-DATA_PATH = Path("../data/loan.csv")
+# garde-fous lisibles dans l'UI
+if not MODEL_PATH.exists() or not SCHEMA_PATH.exists():
+    st.error("Fichiers manquants: 'app/model.pkl' ou 'app/features.json'. "
+             "Lance `python train.py` en local puis push ces fichiers dans `app/`.")
+    st.stop()
 
-assert MODEL_PATH.exists() and SCHEMA_PATH.exists(), "Lance python train.py"
 model = joblib.load(MODEL_PATH)
-with open(SCHEMA_PATH,"r") as f:
+with open(SCHEMA_PATH, "r") as f:
     meta = json.load(f)
-
+num, cat = meta["num"], meta["cat"]
 num_cols = meta.get("num", [])
 cat_cols = meta.get("cat", [])
 all_cols = num_cols + cat_cols
