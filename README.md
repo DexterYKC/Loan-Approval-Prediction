@@ -1,8 +1,8 @@
 # Checkpoint Machine Learning Prediction
-
+                        (https://loan-approval-prediction-ezjwvsod85gwtseo3nqizz.streamlit.app/)
 L’objectif de ce projet est de predire si une demande de prêt sera **approuvee** ou **refusee**, a partir d’informations de base sur les clients
 Ce projet fait partie du checkpoint en **Machine Learning avec Streamlit**
-            (https://loan-approval-prediction-ezjwvsod85gwtseo3nqizz.streamlit.app/)
+            
 J’ai choisi ce projet parce qu’il représente un cas concret et simple : les banques prennent chaque jour ce genre de décision  
 C’est un bon moyen de pratiquer la classification supervisee et de créer une application interactive
 
