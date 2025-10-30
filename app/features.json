@@ -1,0 +1,1 @@
+{"num": ["age", "income", "credit_score"], "cat": ["gender", "occupation", "education_level", "marital_status"], "target": "loan_status"}
