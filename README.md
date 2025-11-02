@@ -7,7 +7,7 @@ J’ai choisi ce projet parce qu’il représente un cas concret et simple : les
 C’est un bon moyen de pratiquer la classification supervisee et de créer une application interactive
 
 ## Données
-Le dataset utilisé s’appelle **Simple Loan Classification Dataset**, depuis **Kaggle**.
+Le dataset utilisé s’appelle **Simple Loan Classification Dataset**, depuis **Kaggle**
 
 Chaque ligne correspond a un client, avec les colonnes suivantes :
 - `age` : age du client  
@@ -54,9 +54,9 @@ Après entrainement, le modele a été evalué avec plusieurs métriques :
 | 1 (Approuvé) | 1.00 | 0.90 | 0.94 |
 
 J’ai ajouté une validation croisée pour vérifier la stabilité des scores  
-Résultat moyen du F1-score sur 5 folds : **0.91 ± 0.04**
+Résultat moyen du F1-score sur 5 folds : **0.91 +- 0.04**
 
-Ces chiffres restent à prendre avec prudence, car le jeu de données est petit et déséquilibré.
+Ces chiffres restent à prendre avec prudence, car le jeu de données est petit et déséquilibré
 
 ## Interpretation
 - Le **revenu** et le **score de credit** sont les variables les plus influentes  
